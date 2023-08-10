@@ -1,0 +1,63 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<body>
+<form action="Introduction.php" method="post">
+<table border=0" align="center" bgcolor="#CDC9C9"  height="100%" rules="row">
+<tr align="center" valign="top">
+
+		<td><label for="cho"><b>Choose the blurb of the movie you want to edit<b/></label></td>
+		<td><select name="Choice" id="cho">
+			<option value="">--</option>
+			<option value="1">智取威虎山</option>
+			<option value="2">悬崖之上</option>
+			<option value="3">末代皇帝</option>
+			<option value="4">黄金时代</option>
+			<option value="5">唐山大地震</option>
+			<option value="6">茶馆</option>
+			<option value="7">让子弹飞</option>
+			<option value="8">东邪西毒</option>
+			<option value="9">新龙门客栈</option>
+			<option value="10">双旗镇刀客</option>
+			<option value="11">影</option>
+			<option value="12">山楂树之恋</option>
+			<option value="13">冲天</option>
+			<option value="14">熔炉</option>
+			<option value="15">千与千寻</option></td>
+		</select>
+</tr>		
+<br>	
+<tr align="center">
+	<td><label for="ed"><b>Choose the operation you want to perform</b></label></td>
+	<td><select name="Edit" id="ed">
+		<option value="">--</option>
+		<option value="Delete">Delete</option>
+		<option value="Update">Update</option>
+		<option value="Insert">Insert</option></td>
+	</select>
+</tr>
+
+<tr>
+<td><b>What you want to update:</b></td><br>
+<td><textarea name="UpdateText" rows="8" cols="50">Enter here:</textarea><br></td>
+</tr>
+
+<tr>
+<td><b>What you want to insert:</b></td><br>
+<td><textarea name="InsertText" rows="8" cols="50">Enter here:</textarea><br></td>
+</tr>
+
+<tr>
+<td><input type="submit" value="Submit"/></td>
+</tr>
+
+</table>
+</form>	
+
+</body>
+
+</html>
+

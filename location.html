@@ -1,0 +1,207 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+
+
+<head>
+<meta charset="UTF-8">
+<style>
+  .centered {  
+    position: relative;  
+    top: 0%;  
+    transform: translateY(-50%);  
+  }  
+
+body {  
+	border: 0px solid grey;  
+	margin: 0;  
+	padding: 0;  
+	shape-margin: 20px; /* 调整边框正方形的边长 */ 
+}  
+<!-->	
+div {  
+    /*图片地址 不重复 水平位置居中 垂直位置居中*/  
+    background: url("background1.jpg") no-repeat center center;  
+    height: 100%;  
+    width: 100%;  
+    /*把背景图片放大到适合元素容器的尺寸，图片比例不变*/  
+    background-size: cover;  
+    position: absolute;  
+    left: 0;  
+    top: 8;  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+}-->
+</style>
+<style>
+ul {  
+  list-style-type: none;  
+  margin: 0;  
+  padding: 0;  
+  position: fixed;  
+  top: 0;  
+  width: 100%;  
+  overflow: hidden;  
+  background-color: #333;  
+}
+
+li {  
+  float: left;  
+}
+
+li a {  
+  display: block;  
+  color: white;  
+  text-align: center;  
+  padding: 10px 90px;  
+  text-decoration: none;  
+}
+
+li a:hover {  
+  background-color: #111;  
+}
+
+</style>
+<style>
+form {  
+  position: relative;  
+  top: 40px;  
+  left: 0px; 
+  height: 80;
+}
+</style>
+<style>
+  table {  
+  position: absolute;  
+  left: 15%;  
+  transform: translateX(-32%);  
+}
+</style>
+<style type = "text/css">
+.mypic{
+border-radius: 25% / 50%;
+}
+</style>
+<style>
+#oImage {    
+  position: relative;    
+  top: 200px;    
+}
+</style>
+<title>Three Autumns A Day</title>
+</head>
+
+<body background="background1.jpg"> 
+<h1 align="center" style="font-size=36px;" >
+<ul>
+  <li><a href="location.html">Coordinate</a></li>
+  <li><a href="Pantone.html">Pantone</a></li>
+  <li><a href="Introduction.html">Edit</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
+</h1>
+
+
+<form action="Search.php" method="post" onsubmit="return beforeSubmit(this);">
+<table border=0" align="left"  height="100%" rules="row">
+<tr align="left" valign="top">
+	<td><label for="loca"><b>location<b/></label></td>
+	<td><select name="location" id="loca">
+		<option value="">--</option>
+		<option value="North America">North America</option>
+		<option value="Latin America">Latin America</option>
+		<option value="Oceania">Oceania</option>
+		<option value="South and Southeast Asia">South and Southeast Asia</option>
+		<option value="East Asia">East Asia</option>
+		<option value="Eastern Europe and North Asia">Eastern Europe and North Asia</option>
+		<option value="North Africa, West Asia and Central Asia">North Africa, West Asia and Central Asia</option>
+		<option value="Western Europe">Western Europe</option>
+		<option value="Sub-saharan Africa">Sub-saharan Africa</option></td>
+	</select>
+	
+	<td><label for="pant"><b>pantone</b></label></td>
+	<td><select name="pantone" id="pant">
+		<option value="">--</option>
+		<option value="RED">RED</option>
+		<option value="YELLOW">YELLOW</option>
+		<option value="ORANGE">ORANGE</option>
+		<option value="GREEN">GREEN</option>
+		<option value="BLUE">BLUE</option></td>		
+	</select>
+
+
+	<td><input type="submit" value="Submit"/></td>
+</tr>
+</table>
+</form>	
+
+<h2 align="right" style="font-size=24px;">
+	<font color="#008252">Scroll to resize</font>
+</h2>
+
+<script type="text/javascript">  
+function beforeSubmit(form) {    
+  if (form.location.value == '' && form.pantone.value == '') {    
+    alert('Please enter a location and Pantone color.');    
+    form.username.focus();    
+    location.href = 'Web111/location.html';  // 跳转到指定页面    
+  } else {    
+    // 处理表单提交逻辑    
+  }    
+}
+
+// 添加添加事件处理程序，当用户点击表单时执行 beforeSubmit() 函数    
+form.addEventListener('submit', beforeSubmit);   
+
+</script>  
+
+
+
+<div align="center">
+<script>
+var count =10;   
+function Picture()
+{
+	count=Counting(count);
+	Resize(count);
+return false;
+}
+function Counting(count){
+	if (event.wheelDelta>=120)
+		count++;
+	else if(event.wheelDelta<=-120)
+		count--;
+	return count;
+}
+function Resize(count){
+	oImage.style.zoom=count+'0%';
+	oCounter.innerText=count+'0%';
+}
+</script>
+
+<img id="oImage" src="Worldmap.jpg" class = "mypic" onmousewheel="return Picture();"  border="solid 5px red" usemap="#image-map"> 
+
+<map name="image-map">
+    <area target="" alt="North America" title="North America" href="Areas\North America\北美.html" coords="1284,308,1276,320,1265,329,1278,339,1263,350,1276,363,1282,377,1288,392,1299,396,1309,399,1318,403,1318,413,1299,434,1309,430,1326,424,1341,413,1356,396,1366,382,1387,386,1398,388,1417,390,1428,399,1444,405,1459,411,1472,424,1482,432,1497,441,1514,447,1525,468,1529,479,1529,493,1535,506,1542,517,1550,529,1558,540,1567,548,1577,559,1588,565,1603,569,1615,574,1630,565,1643,565,1655,565,1664,571,1672,578,1683,571,1693,578,1704,584,1717,590,1727,597,1736,586,1750,584,1765,584,1782,574,1820,612,1803,599,1793,582,1818,590,1807,574,1803,557,1807,540,1807,517,1803,498,1803,481,1812,466,1805,451,1812,439,1829,441,1837,418,1860,399,1845,388,1831,373,1822,358,1807,350,1791,344,1774,342,1759,329,1746,323,1731,320,1717,312,1715,291,1725,278,1738,270,1757,272,1772,283,1791,291,1807,295,1807,276,1818,287,1801,266,1795,245,1801,232,1795,219,1782,209,1769,200,1755,192,1740,181,1723,177,1706,164,1689,162,1674,160,1651,164,1626,164,1607,167,1588,169,1537,179,1485,207,1411,255,1415,274,1419,287,1411,297,1396,304" shape="poly">
+    <area target="" alt="Latin America" title="Latin America" href="Areas\SouthAmerica\SouthAmerica.html" coords="1611,582,1623,582,1750,601,1763,599,1779,599,1794,595,1826,599,1853,612,1862,620,1870,629,1887,637,1900,648,1917,658,1936,665,1961,682,1969,696,1980,709,1984,724,1986,736,1986,749,1991,764,2003,776,2009,785,2028,789,2041,798,2052,823,2054,840,2064,848,2079,854,2092,865,2104,876,2117,884,2126,899,2136,911,2136,928,2132,945,2117,966,2109,983,2100,996,2092,1017,2081,1042,2066,1068,2047,1080,2018,1097,1986,1139,1959,1162,1936,1177,1919,1192,1910,1207,1891,1213,1872,1221,1851,1243,1834,1257,1826,1270,1813,1287,1792,1297,1782,1312,1779,1331,1758,1333,1758,1308,1761,1277,1771,1264,1801,1234,1824,1178,1862,1123,1887,1072,1906,1015,1890,981,1866,897,1875,836,1892,806,1887,775,1868,764,1845,758,1809,724,1778,703,1729,688,1702,667,1668,644,1634,608,1638,576,1653,578,1668,582,1681,582,1695,586,1706,591,1714,597,1727,601,1624,595" shape="poly">
+    <area target="" alt="Oceania" title="Oceania" href="Areas\Oceania\Oceania.html" coords="1016,863,1016,912,961,931,942,939,921,948,904,964,896,983,883,992,860,1002,847,1011,868,1095,872,1108,887,1112,898,1108,915,1099,927,1093,942,1089,959,1085,971,1089,984,1099,999,1104,1012,1112,1018,1125,1035,1133,1047,1161,1172,1190,1191,1188,1208,1171,1227,1154,1235,1137,1233,1123,1214,1104,1214,1118,1208,1140,1193,1156,1176,1175,1060,1159,1060,1127,1071,1123,1092,1080,1098,1047,1085,1017,1062,996,1039,948,1026,931,1031,910,1043,905,1058,920,1073,922,1064,905,1079,895,1098,889,1085,867,1064,882,1045,882,1026,870" shape="poly">
+    <area target="" alt="South and Southeast Asia" title="South and Southeast Asia" href="Areas\South and Southeast Asia\South and Southeast Asia.html" coords="556,638,564,623,575,614,592,608,602,600,615,587,627,579,632,568,644,562,653,568,665,587,670,600,682,606,695,619,705,629,718,631,724,640,735,644,750,642,754,659,762,663,771,667,784,676,798,680,800,693,805,709,807,720,817,730,828,730,845,726,857,722,872,718,889,709,904,714,906,726,906,739,908,752,923,766,927,781,923,796,927,806,936,819,946,827,959,836,978,844,990,849,1007,857,1011,870,1011,887,1011,901,999,910,986,912,969,914,952,916,940,920,919,922,885,922,815,910,771,895,724,819,731,798,746,743,744,726,727,726,727,705,714,684,691,682,680,699,655,711,644,730,638,752,642,783,634,798,617,785,600,726,602,686,585,671,575,648" shape="poly">
+    <area target="" alt="East Asia" title="East Asia" href="Areas\East Asia\East Asia.html" coords="807,689,819,684,819,701,836,701,849,684,872,676,891,678,906,667,914,651,927,640,963,617,984,596,1022,587,1035,541,1051,526,1032,507,1022,537,1011,564,984,579,959,577,950,551,971,532,975,520,975,503,971,486,963,471,948,457,933,448,921,454,906,461,773,469,756,469,739,469,722,471,701,475,686,486,665,501,650,511,642,532,642,549,663,568,676,583,686,596,710,617,740,629,761,650,778,667" shape="poly">
+    <area target="" alt="Eastern Europe and North Asia" title="Eastern Europe and North Asia" href="Areas\Eastern Europe and North Asia\俄罗斯.html" coords="976,537,991,533,997,522,1010,505,1024,501,1041,491,1054,484,1075,478,1100,480,1113,474,1128,450,1151,412,1200,389,1225,366,1250,362,1244,345,1197,328,1128,332,1067,290,1020,280,967,292,927,288,902,263,872,235,845,240,803,235,773,244,729,248,687,261,659,282,644,288,619,292,577,282,558,286,550,299,545,309,537,322,526,334,512,345,497,356,476,362,446,379,446,391,448,410,438,417,429,438,436,450,446,463,463,467,474,478,476,497,488,505,509,505,518,486,520,474,535,463,541,446,550,438,577,434,617,444,647,448,678,457,737,465,758,465,801,463,856,459,887,461,915,450,938,444,953,450,969,469,980,493" shape="poly">
+    <area target="" alt="North Africa, West Asia and Central Asia" title="North Africa, West Asia and Central Asia" href="Areas\North Africa, West Asia and Central Asia\North Africa, West Asia and Central Asia.html" coords="226,505,210,517,193,530,184,547,167,564,155,572,115,616,108,627,121,631,134,627,163,593,178,585,188,591,205,610,218,625,235,635,243,644,258,640,277,633,294,623,309,631,323,642,336,642,357,631,378,631,395,631,410,633,412,652,416,686,416,707,425,732,442,735,488,711,528,673,543,646,551,629,577,606,598,600,619,576,640,555,638,522,653,500,674,488,701,471,648,458,615,450,577,444,547,454,528,479,516,507,480,507,450,490,416,494,402,509,402,528,421,532,431,541,423,553,412,570,397,572,366,566,349,553,338,564,313,543,307,524,311,507,250,503,275,503" shape="poly">
+    <area target="" alt="Western Europe" title="Western Europe" href="Areas\WestE\西欧.html" coords="246,434,237,451,222,468,218,482,229,489,246,493,267,480,288,468,307,451,326,455,336,463,345,480,336,495,334,508,351,493,368,472,362,451,372,489,372,510,383,518,385,499,402,493,423,476,435,459,425,442,429,425,435,408,438,377,457,360,482,352,501,345,520,333,533,314,543,299,552,282,579,276,619,202,596,191,571,191,558,202,552,214,566,223,592,219,592,236,568,261,537,269,507,265,469,286,435,303,419,303,374,257,343,252,326,255,343,276,362,274,376,269,414,318,406,339,397,358,366,373,347,366,357,343,362,326,336,330,334,343,307,345,292,362,292,375,309,375,298,392,292,408,296,421,288,432,271,438" shape="poly">
+    <area target="" alt="Sub-saharan Africa" title="Sub-saharan Africa" href="Areas\South and Southeast Asia\South and Southeast Asia.html" coords="108,632,106,649,94,666,85,691,85,712,91,744,102,775,115,797,146,801,182,784,195,801,205,807,216,822,210,847,214,868,237,919,248,957,250,1007,288,1075,309,1107,330,1138,347,1155,381,1147,395,1113,393,1062,404,1062,427,1062,457,1062,467,1048,465,1022,465,988,457,961,448,955,440,970,435,984,433,1003,438,1031,446,1052,397,1043,389,1020,400,997,402,951,393,915,404,851,454,782,469,743,429,752,404,718,397,676,400,640,364,633,334,646,300,631,241,650,178,591,132,638" shape="poly">
+    <area target="" alt="" title="" href="" coords="" shape="0">
+</map>
+
+<footer>
+	<br><br><br><br>
+  <p>Made by：一日三秋   <a href="mailto:"zhaokangzhe@163.com"> Contact Us</a></p>
+</footer>
+
+</body>
+
+</html>
